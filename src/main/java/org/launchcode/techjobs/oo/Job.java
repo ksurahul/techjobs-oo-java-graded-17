@@ -13,9 +13,6 @@ public class Job {
     private PositionType positionType;
     private CoreCompetency coreCompetency;
 
-    // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
-    //  other five fields. The second constructor should also call the first in order to initialize
-    //  the 'id' field. - done
     public Job() {
         id = nextId;
         nextId++;
@@ -30,8 +27,7 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
-    // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
-    //  match. - done
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -44,8 +40,7 @@ public class Job {
         return Objects.hash(getId());
     }
 
-    // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
-    //  and id. - done
+
     public int getId() {
         return id;
     }
@@ -88,5 +83,43 @@ public class Job {
 
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
+    }
+
+    @Override
+    public String toString() {
+        String output = System.lineSeparator() +
+                "ID: " + id + System.lineSeparator();
+
+        if(name.isEmpty()) {
+            output = output + "Name: Data not available" + System.lineSeparator();
+        } else {
+            output = output + "Name: " + name + System.lineSeparator();
+        }
+
+        if(employer.getValue().isEmpty()) {
+            output = output + "Employer: Data not available" + System.lineSeparator();
+        } else {
+            output = output + "Employer: " + employer + System.lineSeparator();
+        }
+
+        if(location.getValue().isEmpty()) {
+            output = output + "Location: Data not available" + System.lineSeparator();
+        } else {
+            output = output + "Location: " + location + System.lineSeparator();
+        }
+
+        if(positionType.getValue().isEmpty()) {
+            output = output + "Position Type: Data not available" + System.lineSeparator();
+        } else {
+            output = output + "Position Type: " + positionType + System.lineSeparator();
+        }
+
+        if(coreCompetency.getValue().isEmpty()) {
+            output = output + "Core Competency: Data not available" + System.lineSeparator();
+        } else {
+            output = output + "Core Competency: " + coreCompetency + System.lineSeparator();
+        }
+
+        return output;
     }
 }
