@@ -53,20 +53,20 @@ public class JobTest {
     @Test
     public void testToStringStartsAndEndsWithNewLine() {
         Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-//        String test = System.lineSeparator() +
-//                "ID: " + job.getId() + System.lineSeparator() +
-//                "Name: " + job.getName() + System.lineSeparator() +
-//                "Employer: " + job.getEmployer() + System.lineSeparator() +
-//                "Location: " + job.getLocation() + System.lineSeparator() +
-//                "Position Type: " + job.getPositionType() + System.lineSeparator() +
-//                "Core Competency: " + job.getCoreCompetency() + System.lineSeparator();
-//
-//        assertEquals(test, job.toString());
+        String test = System.lineSeparator() +
+                "ID: " + job.getId() + System.lineSeparator() +
+                "Name: " + job.getName() + System.lineSeparator() +
+                "Employer: " + job.getEmployer() + System.lineSeparator() +
+                "Location: " + job.getLocation() + System.lineSeparator() +
+                "Position Type: " + job.getPositionType() + System.lineSeparator() +
+                "Core Competency: " + job.getCoreCompetency() + System.lineSeparator();
 
-        String firstChar = String.valueOf(job.toString().charAt(0));
-        String lastChar = String.valueOf(job.toString().charAt(job.toString().length()-1));
-        assertEquals(firstChar, System.lineSeparator());
-        assertEquals(lastChar, System.lineSeparator());
+        assertEquals(test, job.toString());
+
+//        String firstChar = String.valueOf(job.toString().charAt(0));
+//        String lastChar = String.valueOf(job.toString().charAt(job.toString().length()-1));
+//        assertEquals(firstChar, System.lineSeparator());
+//        assertEquals(lastChar, System.lineSeparator());
     }
 
     // test to check toString contains correct info
@@ -75,13 +75,12 @@ public class JobTest {
         Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         String test = System.lineSeparator() +
-                "ID: 1" + System.lineSeparator() +
+                "ID: 4" + System.lineSeparator() +
                 "Name: Product tester" + System.lineSeparator() +
                 "Employer: ACME" + System.lineSeparator() +
                 "Location: Desert" + System.lineSeparator() +
                 "Position Type: Quality control" + System.lineSeparator() +
                 "Core Competency: Persistence" + System.lineSeparator();
-
 
         assertEquals(test, job.toString());
     }
@@ -92,7 +91,7 @@ public class JobTest {
         Job job = new Job("Product tester", new Employer(""), new Location(""), new PositionType("Quality control"), new CoreCompetency(""));
 
         String test = System.lineSeparator() +
-                "ID: 1" + System.lineSeparator() +
+                "ID: 3" + System.lineSeparator() +
                 "Name: Product tester" + System.lineSeparator() +
                 "Employer: Data not available" + System.lineSeparator() +
                 "Location: Data not available" + System.lineSeparator() +
